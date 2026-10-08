@@ -1,0 +1,121 @@
+{
+  "fem": {
+    "controls": {
+      "chunk_size": 512,
+      "fem_comparison_eta_order": 96,
+      "fem_comparison_nx": 257,
+      "finer_eta_order": 96,
+      "finer_nx": 257,
+      "flux_gauss_order": 64,
+      "flux_sections": 513,
+      "periodic_pairs": 2049,
+      "structured_eta_order": 64,
+      "structured_nx": 129,
+      "unseen_interior": 8192,
+      "wall_points_total": 4096
+    },
+    "coordinate_alignment": {
+      "float64_identity": true,
+      "maximum_height_error": 1.1102230246251565e-16
+    },
+    "metrics": {
+      "fem_mean_flux": 0.00038523069474681837,
+      "fem_pressure_weighted_mean_before_gauge": 1.7691627636450343e-10,
+      "minimum_discrete_width": 0.09999999999999998,
+      "pinn_mean_flux": 0.0003849611669176355,
+      "pinn_pressure_weighted_mean_before_gauge": 0.08886288141727,
+      "relative_mean_flux_error": 0.0006996530464946837,
+      "relative_physical_l2_velocity_error": 0.0021253564516699,
+      "relative_zero_mean_pressure_error": 0.0012966203189489908
+    },
+    "model_state_hash_after": "188EC4B33427ED196D0CC3A17CA8A49D2E6C66C5FFECF2FAF39E97C84BDD6BDE",
+    "model_state_hash_before": "188EC4B33427ED196D0CC3A17CA8A49D2E6C66C5FFECF2FAF39E97C84BDD6BDE"
+  },
+  "model_file": "results/pinn/seed_1/model.pt",
+  "optimizer_created": false,
+  "physics": {
+    "boundary": {
+      "metrics": {
+        "all_finite": true,
+        "periodic_pi_rms": 0.0029781086582656765,
+        "periodic_u_rms": 0.0009092248262722936,
+        "periodic_v_rms": 0.002604081490617081,
+        "wall_speed_maximum_over_U0": 0.01832424438057007,
+        "wall_speed_rms_over_U0": 0.0038037631977789117
+      }
+    },
+    "controls": {
+      "chunk_size": 512,
+      "fem_comparison_eta_order": 96,
+      "fem_comparison_nx": 257,
+      "finer_eta_order": 96,
+      "finer_nx": 257,
+      "flux_gauss_order": 64,
+      "flux_sections": 513,
+      "periodic_pairs": 2049,
+      "structured_eta_order": 64,
+      "structured_nx": 129,
+      "unseen_interior": 8192,
+      "wall_points_total": 4096
+    },
+    "flux": {
+      "metrics": {
+        "all_finite": true,
+        "mean_dimensionless_flux": 0.909004198607383,
+        "mean_physical_flux": 0.00038496120831795963,
+        "relative_flux_variation": 0.0019612314062402037
+      }
+    },
+    "interior_sets": {
+      "finer_structured": {
+        "metrics": {
+          "all_finite": true,
+          "canonical_pressure_physical_domain_mean": 3.833941378812554e-18,
+          "continuity_maximum": 1.865174681370263e-14,
+          "continuity_rms": 1.7550305747204787e-15,
+          "horizontal_rms": 0.00993389607975147,
+          "raw_pressure_physical_domain_mean": 0.2962096009254384,
+          "vertical_rms": 0.00701132576140128
+        }
+      },
+      "structured": {
+        "metrics": {
+          "all_finite": true,
+          "canonical_pressure_physical_domain_mean": -4.5022125562560854e-17,
+          "continuity_maximum": 1.9539925233402755e-14,
+          "continuity_rms": 1.7695037319690414e-15,
+          "horizontal_rms": 0.009696223895898274,
+          "raw_pressure_physical_domain_mean": 0.29620913135219196,
+          "vertical_rms": 0.006957075987961876
+        }
+      },
+      "unseen": {
+        "metrics": {
+          "all_finite": true,
+          "canonical_pressure_physical_domain_mean": 1.0150872585530335e-17,
+          "continuity_maximum": 1.687538997430238e-14,
+          "continuity_rms": 1.7336506830364309e-15,
+          "horizontal_rms": 0.01101156133248196,
+          "raw_pressure_physical_domain_mean": 0.29622038537100315,
+          "vertical_rms": 0.007120638197051646
+        }
+      }
+    },
+    "model_state_hash_after": "188EC4B33427ED196D0CC3A17CA8A49D2E6C66C5FFECF2FAF39E97C84BDD6BDE",
+    "model_state_hash_before": "188EC4B33427ED196D0CC3A17CA8A49D2E6C66C5FFECF2FAF39E97C84BDD6BDE"
+  },
+  "seed": 1,
+  "training_consistency": {
+    "checks": {
+      "completed": true,
+      "model_state": true,
+      "optimizer_counts": true,
+      "point_sets": true,
+      "protocol": true,
+      "seed": true
+    },
+    "model_state_hash": "188EC4B33427ED196D0CC3A17CA8A49D2E6C66C5FFECF2FAF39E97C84BDD6BDE"
+  },
+  "training_file": "results/pinn/seed_1/training.json",
+  "training_performed": false
+}

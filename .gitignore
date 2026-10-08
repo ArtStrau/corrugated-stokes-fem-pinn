@@ -1,0 +1,10 @@
+/reproduction/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.virtual_documents/
+*.egg-info/
+
+.DS_Store
+Thumbs.db

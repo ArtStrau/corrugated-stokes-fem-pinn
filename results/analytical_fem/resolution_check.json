@@ -1,0 +1,235 @@
+{
+  "coarse_results": [
+    {
+      "analytical_flux": 0.010416666666666666,
+      "delta": 1.0,
+      "epsilon": 0.0,
+      "fem_flux": 0.010416666666667901,
+      "fem_relative_flux_variation": 1.2823075934419039e-14,
+      "mean_width": 0.5,
+      "relative_amplitude": 0.0,
+      "relative_flux_error": 1.1857181902995266e-13,
+      "width_max": 0.5,
+      "width_min": 0.5
+    },
+    {
+      "analytical_flux": 0.008857001745284879,
+      "delta": 0.9,
+      "epsilon": 0.04999999999999999,
+      "fem_flux": 0.00882541980101537,
+      "fem_relative_flux_variation": 3.5753803231369994e-07,
+      "mean_width": 0.475,
+      "relative_amplitude": 0.05263157894736841,
+      "relative_flux_error": 0.0035785203402874458,
+      "width_max": 0.5,
+      "width_min": 0.45
+    },
+    {
+      "analytical_flux": 0.007316377840490113,
+      "delta": 0.8,
+      "epsilon": 0.09999999999999998,
+      "fem_flux": 0.007214804926490179,
+      "fem_relative_flux_variation": 8.037483408354928e-07,
+      "mean_width": 0.45,
+      "relative_amplitude": 0.11111111111111108,
+      "relative_flux_error": 0.01407840059916171,
+      "width_max": 0.5,
+      "width_min": 0.4
+    },
+    {
+      "analytical_flux": 0.0058200370954244315,
+      "delta": 0.7,
+      "epsilon": 0.15000000000000002,
+      "fem_flux": 0.005647141510819749,
+      "fem_relative_flux_variation": 1.4059361629372882e-06,
+      "mean_width": 0.425,
+      "relative_amplitude": 0.17647058823529416,
+      "relative_flux_error": 0.030616478137376217,
+      "width_max": 0.5,
+      "width_min": 0.35
+    },
+    {
+      "analytical_flux": 0.004401117438872066,
+      "delta": 0.6,
+      "epsilon": 0.2,
+      "fem_flux": 0.0041858175385516925,
+      "fem_relative_flux_variation": 2.2983511703386315e-06,
+      "mean_width": 0.4,
+      "relative_amplitude": 0.25,
+      "relative_flux_error": 0.051435567445892026,
+      "width_max": 0.5,
+      "width_min": 0.3
+    },
+    {
+      "analytical_flux": 0.0031013455315199454,
+      "delta": 0.5,
+      "epsilon": 0.25,
+      "fem_flux": 0.002888538867833048,
+      "fem_relative_flux_variation": 3.77651960557303e-06,
+      "mean_width": 0.375,
+      "relative_amplitude": 0.3333333333333333,
+      "relative_flux_error": 0.07367277139896779,
+      "width_max": 0.5,
+      "width_min": 0.25
+    },
+    {
+      "analytical_flux": 0.0019702664549335696,
+      "delta": 0.4,
+      "epsilon": 0.3,
+      "fem_flux": 0.0018024351745054292,
+      "fem_relative_flux_variation": 6.5881596339556305e-06,
+      "mean_width": 0.35,
+      "relative_amplitude": 0.4285714285714286,
+      "relative_flux_error": 0.09311362916238673,
+      "width_max": 0.5,
+      "width_min": 0.2
+    },
+    {
+      "analytical_flux": 0.0010614778246224152,
+      "delta": 0.3,
+      "epsilon": 0.35,
+      "fem_flux": 0.00096151775857771,
+      "fem_relative_flux_variation": 1.3065743139404632e-05,
+      "mean_width": 0.325,
+      "relative_amplitude": 0.5384615384615384,
+      "relative_flux_error": 0.1039607070727091,
+      "width_max": 0.5,
+      "width_min": 0.15
+    },
+    {
+      "analytical_flux": 0.00042349772301132356,
+      "delta": 0.2,
+      "epsilon": 0.4,
+      "fem_flux": 0.00038548084894589834,
+      "fem_relative_flux_variation": 3.3616690398744865e-05,
+      "mean_width": 0.3,
+      "relative_amplitude": 0.6666666666666667,
+      "relative_flux_error": 0.09862195273612887,
+      "width_max": 0.5,
+      "width_min": 0.1
+    },
+    {
+      "analytical_flux": 8.158611094345673e-05,
+      "delta": 0.1,
+      "epsilon": 0.45,
+      "fem_flux": 7.645689717369309e-05,
+      "fem_relative_flux_variation": 0.00017006379615362483,
+      "mean_width": 0.275,
+      "relative_amplitude": 0.8181818181818181,
+      "relative_flux_error": 0.06708634484749249,
+      "width_max": 0.5,
+      "width_min": 0.05
+    }
+  ],
+  "comparisons": [
+    {
+      "absolute_flux_error_change": -4.837796829800632e-13,
+      "delta": 1.0,
+      "relative_coarse_fine_flux_difference": 4.837796829803546e-13
+    },
+    {
+      "absolute_flux_error_change": -3.566892233298081e-06,
+      "delta": 0.9,
+      "relative_coarse_fine_flux_difference": 3.5541609188482744e-06
+    },
+    {
+      "absolute_flux_error_change": -1.546374121532898e-05,
+      "delta": 0.8,
+      "relative_coarse_fine_flux_difference": 1.5248826325743869e-05
+    },
+    {
+      "absolute_flux_error_change": -3.813265985996503e-05,
+      "delta": 0.7,
+      "relative_coarse_fine_flux_difference": 3.699848568131687e-05
+    },
+    {
+      "absolute_flux_error_change": -7.552874683615374e-05,
+      "delta": 0.6,
+      "relative_coarse_fine_flux_difference": 7.182876824564526e-05
+    },
+    {
+      "absolute_flux_error_change": -0.00013465850377793187,
+      "delta": 0.5,
+      "relative_coarse_fine_flux_difference": 0.00012540284228628287
+    },
+    {
+      "absolute_flux_error_change": -0.00022932169012064574,
+      "delta": 0.4,
+      "relative_coarse_fine_flux_difference": 0.0002097436032690701
+    },
+    {
+      "absolute_flux_error_change": -0.00039115086162780366,
+      "delta": 0.3,
+      "relative_coarse_fine_flux_difference": 0.00035419043198735875
+    },
+    {
+      "absolute_flux_error_change": -0.0007134034188501087,
+      "delta": 0.2,
+      "relative_coarse_fine_flux_difference": 0.0006489406666090407
+    },
+    {
+      "absolute_flux_error_change": -0.0016549579749514237,
+      "delta": 0.1,
+      "relative_coarse_fine_flux_difference": 0.0015485112913488433
+    }
+  ],
+  "protocol": {
+    "absolute_flux_error_change_definition": "coarse_relative_flux_error - fine_relative_flux_error",
+    "coarse_fem_settings": {
+      "flux_quadrature_order": 64,
+      "integration_order": 6,
+      "nx": 128,
+      "ny": 64
+    },
+    "coarse_fem_solves": 10,
+    "delta_values": [
+      1.0,
+      0.9,
+      0.8,
+      0.7,
+      0.6,
+      0.5,
+      0.4,
+      0.3,
+      0.2,
+      0.1
+    ],
+    "fine_fem_settings": {
+      "flux_quadrature_order": 64,
+      "integration_order": 6,
+      "nx": 256,
+      "ny": 128
+    },
+    "fine_sweep_source": "results/analytical_fem/sweep.json",
+    "fixed_parameters": {
+      "L": 1.0,
+      "Re": 0.0,
+      "delta_p": -1.0,
+      "mu": 1.0,
+      "width_max": 0.5
+    },
+    "relative_coarse_fine_flux_difference_definition": "abs(Q_fine - Q_coarse) / abs(Q_coarse)",
+    "relative_flux_error_definition": "abs(analytical_flux - fem_flux) / abs(fem_flux)"
+  },
+  "straight_channel_checks": {
+    "analytical_vs_exact_relative_difference": 0.0,
+    "coarse_fem_vs_exact_relative_difference": 1.1857181902996672e-13,
+    "exact_poiseuille_flux": 0.010416666666666666,
+    "fine_fem_vs_exact_relative_difference": 6.023515020103787e-13
+  },
+  "summary_diagnostics": {
+    "largest_analytical_fem_discrepancy_delta_matches": true,
+    "maximum_coarse_relative_flux_error": {
+      "delta": 0.3,
+      "value": 0.1039607070727091
+    },
+    "maximum_fine_relative_flux_error": {
+      "delta": 0.3,
+      "value": 0.1043518579343369
+    },
+    "maximum_relative_coarse_fine_flux_difference": {
+      "delta": 0.1,
+      "value": 0.0015485112913488433
+    }
+  }
+}

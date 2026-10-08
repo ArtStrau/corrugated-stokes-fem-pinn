@@ -1,0 +1,96 @@
+{
+  "aggregate": {
+    "relative_mean_flux_error": {
+      "maximum": 0.001047276402653572,
+      "mean": 0.0007693211560879208,
+      "minimum": 0.0005610340191155071,
+      "standard_deviation": 0.0002045289678063821
+    },
+    "relative_physical_l2_velocity_error": {
+      "maximum": 0.0029478150705526214,
+      "mean": 0.0025776047754604886,
+      "minimum": 0.0021253564516699,
+      "standard_deviation": 0.00034074156732844213
+    },
+    "relative_zero_mean_pressure_error": {
+      "maximum": 0.00155866706792051,
+      "mean": 0.0013815012556976942,
+      "minimum": 0.001289216380223582,
+      "standard_deviation": 0.00012531160718409109
+    },
+    "standard_deviation_convention": "population standard deviation; seeds 0, 1, and 2 are the complete reported ensemble"
+  },
+  "fem_reference": {
+    "L": 1.0,
+    "Re": 0.0,
+    "delta_p": -1.0,
+    "flux_quadrature_order": 64,
+    "integration_order": 6,
+    "mean_flux": 0.00038523069474681837,
+    "mu": 1.0,
+    "nx": 256,
+    "ny": 128,
+    "relative_flux_variation": 3.853441112396614e-06,
+    "width_max": 0.5,
+    "width_min": 0.1
+  },
+  "seeds": [
+    {
+      "adam_steps": 16500,
+      "final_adam_loss": 0.0004958024475266435,
+      "final_lbfgs_loss": 0.00014313152944737178,
+      "lbfgs_closure_evaluations": 500,
+      "periodic_pi_rms": 0.003140469822952548,
+      "periodic_u_rms": 0.0006152844666686372,
+      "periodic_v_rms": 0.002981908280031981,
+      "relative_flux_variation": 0.0019707427197807152,
+      "relative_mean_flux_error": 0.001047276402653572,
+      "relative_physical_l2_velocity_error": 0.002659642804158944,
+      "relative_zero_mean_pressure_error": 0.001289216380223582,
+      "seed": 0,
+      "training_seconds": 3001.9169756043702,
+      "unseen_horizontal_rms": 0.010391334005828465,
+      "unseen_vertical_rms": 0.006838228744508239,
+      "wall_speed_maximum_over_U0": 0.020916835442638934,
+      "wall_speed_rms_over_U0": 0.0039903528145165835
+    },
+    {
+      "adam_steps": 16500,
+      "final_adam_loss": 0.0007518940468786532,
+      "final_lbfgs_loss": 0.00015853038442597536,
+      "lbfgs_closure_evaluations": 500,
+      "periodic_pi_rms": 0.0029781086582656765,
+      "periodic_u_rms": 0.0009092248262722936,
+      "periodic_v_rms": 0.002604081490617081,
+      "relative_flux_variation": 0.0019612314062402037,
+      "relative_mean_flux_error": 0.0006996530464946837,
+      "relative_physical_l2_velocity_error": 0.0021253564516699,
+      "relative_zero_mean_pressure_error": 0.0012966203189489908,
+      "seed": 1,
+      "training_seconds": 2773.8417132031173,
+      "unseen_horizontal_rms": 0.01101156133248196,
+      "unseen_vertical_rms": 0.007120638197051646,
+      "wall_speed_maximum_over_U0": 0.01832424438057007,
+      "wall_speed_rms_over_U0": 0.0038037631977789117
+    },
+    {
+      "adam_steps": 16500,
+      "final_adam_loss": 0.0004064611477637596,
+      "final_lbfgs_loss": 0.00012229973100051316,
+      "lbfgs_closure_evaluations": 500,
+      "periodic_pi_rms": 0.0026961967762754624,
+      "periodic_u_rms": 0.0007754359056061198,
+      "periodic_v_rms": 0.002289434505340561,
+      "relative_flux_variation": 0.0011191909577157523,
+      "relative_mean_flux_error": 0.0005610340191155071,
+      "relative_physical_l2_velocity_error": 0.0029478150705526214,
+      "relative_zero_mean_pressure_error": 0.00155866706792051,
+      "seed": 2,
+      "training_seconds": 2960.577179742977,
+      "unseen_horizontal_rms": 0.010161915545690821,
+      "unseen_vertical_rms": 0.007452761319947798,
+      "wall_speed_maximum_over_U0": 0.029410508152858277,
+      "wall_speed_rms_over_U0": 0.0034283290215840613
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "finest_retained_side": {
+    "maximum_periodic_dof_mismatch": 0.0,
+    "maximum_velocity_difference": 3.521749839333354e-14,
+    "maximum_zero_mean_pressure_difference": 8.473031390923306e-11
+  },
+  "levels": [
+    {
+      "divergence_l2_norm": 0.0007925983423594187,
+      "maximum_wall_geometry_error": 0.0018814314894580464,
+      "mean_flux": 0.0004059740542604814,
+      "nx": 16,
+      "ny": 8,
+      "relative_flux_variation": 0.049386290620718164
+    },
+    {
+      "divergence_l2_norm": 0.00022694339100292496,
+      "maximum_wall_geometry_error": 0.00047819454157860264,
+      "mean_flux": 0.0003903394739405382,
+      "nx": 32,
+      "ny": 16,
+      "relative_flux_variation": 0.0035366663447787597
+    },
+    {
+      "divergence_l2_norm": 7.404255111846545e-05,
+      "maximum_wall_geometry_error": 0.00012004101718480348,
+      "mean_flux": 0.00038646985061906874,
+      "nx": 64,
+      "ny": 32,
+      "relative_flux_variation": 0.00032316213083852035
+    },
+    {
+      "divergence_l2_norm": 2.5371127102839363e-05,
+      "maximum_wall_geometry_error": 3.0041068738252685e-05,
+      "mean_flux": 0.00038548084894589834,
+      "nx": 128,
+      "ny": 64,
+      "relative_flux_variation": 3.3616690398744865e-05
+    },
+    {
+      "divergence_l2_norm": 8.847285946702975e-06,
+      "maximum_wall_geometry_error": 7.512193721699589e-06,
+      "mean_flux": 0.00038523069474681837,
+      "nx": 256,
+      "ny": 128,
+      "relative_flux_variation": 3.853441112396614e-06
+    }
+  ],
+  "study": {
+    "comparison_grid": {
+      "eta_quadrature_order": 64,
+      "physical_domain": "intersection of adjacent discrete cross-sections",
+      "pressure_gauge": "separate physical-area-weighted zero mean on the common grid",
+      "weighting": "Gauss-Legendre transverse weights times physical half-width times L/x_points",
+      "x_points": 129,
+      "x_rule": "uniform endpoint-excluded points on [0,L)"
+    },
+    "flux_quadrature_order": 64,
+    "integration_order": 6,
+    "physical": {
+      "L": 1.0,
+      "Re": 0.0,
+      "delta_p": -1.0,
+      "mu": 1.0,
+      "width_max": 0.5,
+      "width_min": 0.1
+    },
+    "refinement_levels": [
+      [
+        16,
+        8
+      ],
+      [
+        32,
+        16
+      ],
+      [
+        64,
+        32
+      ],
+      [
+        128,
+        64
+      ],
+      [
+        256,
+        128
+      ]
+    ]
+  },
+  "successive_changes": [
+    {
+      "coarse_nx": 16,
+      "coarse_ny": 8,
+      "fine_nx": 32,
+      "fine_ny": 16,
+      "relative_mean_flux_change": 0.04005380281453384,
+      "relative_velocity_l2_change": 0.03985669744334443,
+      "relative_zero_mean_pressure_l2_change": 0.013319309723851175
+    },
+    {
+      "coarse_nx": 32,
+      "coarse_ny": 16,
+      "fine_nx": 64,
+      "fine_ny": 32,
+      "relative_mean_flux_change": 0.010012743077554127,
+      "relative_velocity_l2_change": 0.009868973602117454,
+      "relative_zero_mean_pressure_l2_change": 0.0032458713269563886
+    },
+    {
+      "coarse_nx": 64,
+      "coarse_ny": 32,
+      "fine_nx": 128,
+      "fine_ny": 64,
+      "relative_mean_flux_change": 0.0025656311484081274,
+      "relative_velocity_l2_change": 0.0024828371252285726,
+      "relative_zero_mean_pressure_l2_change": 0.0009574254055476037
+    },
+    {
+      "coarse_nx": 128,
+      "coarse_ny": 64,
+      "fine_nx": 256,
+      "fine_ny": 128,
+      "relative_mean_flux_change": 0.0006493620640597624,
+      "relative_velocity_l2_change": 0.000616824284942344,
+      "relative_zero_mean_pressure_l2_change": 9.692457911953577e-05
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corrugated-stokes-fem-pinn"
+version = "1.0.0"
+description = "Analytical, finite-element, and physics-informed neural-network study of periodic corrugated-channel Stokes flow"
+authors = [
+  { name = "Arthur Straube" }
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.13",
+  "matplotlib>=3.9",
+  "scikit-fem>=12.0",
+  "torch>=2.13",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

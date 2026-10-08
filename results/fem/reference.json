@@ -1,0 +1,29 @@
+{
+  "diagnostics": {
+    "mean_flux": 0.00038523069474681837,
+    "periodic_coordinate_mismatch": 0.0,
+    "relative_flux_variation": 3.853441112396614e-06,
+    "wall_dof_max": 0.0
+  },
+  "fem": {
+    "flux_quadrature_order": 64,
+    "integration_order": 6,
+    "nx": 256,
+    "ny": 128
+  },
+  "physical": {
+    "L": 1.0,
+    "Re": 0.0,
+    "delta_p": -1.0,
+    "mu": 1.0,
+    "width_max": 0.5,
+    "width_min": 0.1
+  },
+  "training_data": false,
+  "versions": {
+    "numpy": "1.26.4",
+    "python": "3.12.12",
+    "scikit_fem": "12.0.2",
+    "scipy": "1.13.1"
+  }
+}
