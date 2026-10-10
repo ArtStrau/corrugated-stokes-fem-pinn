@@ -40,9 +40,9 @@ target case, $a=2/3$ whereas $\varepsilon=0.4$.
 
 The dimensionless full channel height is
 
-$$
-h(X)=1+a\cos\left(\frac{2\pi X}{\ell}\right),
-$$
+```math
+h(X)=1+a\,\cos\left(\frac{2\pi X}{\ell}\right),
+```
 
 and the walls are
 
@@ -86,8 +86,7 @@ and the dimensionless viscous coefficient is
 
 $$
 \alpha=
-\frac{\mu Q_0}{G H_0^3}
-=
+\frac{\mu Q_0}{G H_0^3}=
 \frac{1}{12F}.
 $$
 
@@ -100,10 +99,10 @@ U=\frac{u}{U_0},
 \qquad
 V=\frac{v}{U_0},
 \qquad
-\Pi=\frac{\widetilde p}{P_0}.
+\Pi=\frac{\tilde p}{P_0}.
 $$
 
-For the final target case, the derived values are:
+For the target case, the derived values are:
 
 | Quantity | Value |
 |---|---:|
@@ -154,8 +153,7 @@ retained as one of the eight monitored and trained loss terms.
 The dimensionless residuals are
 
 $$
-R_x
-=
+R_x=
 1-\frac{\partial\Pi}{\partial X}
 +
 \alpha
@@ -167,8 +165,7 @@ R_x
 $$
 
 $$
-R_y
-=
+R_y=
 -\frac{\partial\Pi}{\partial Y}
 +
 \alpha
@@ -180,8 +177,7 @@ R_y
 $$
 
 $$
-R_c
-=
+R_c=
 \frac{\partial U}{\partial X}
 +
 \frac{\partial V}{\partial Y}.
@@ -198,8 +194,7 @@ All required derivatives are obtained by automatic differentiation.
 The objective is the unweighted sum of exactly eight mean-square terms:
 
 $$
-\mathcal L
-=
+\mathcal L=
 \mathcal L_x
 +\mathcal L_y
 +\mathcal L_c
@@ -213,45 +208,42 @@ $$
 The three field-equation terms are
 
 $$
-\mathcal L_x=\operatorname{MSE}(R_x),
+\mathcal L_x=\mathrm{MSE}(R_x),
 \qquad
-\mathcal L_y=\operatorname{MSE}(R_y),
+\mathcal L_y=\mathrm{MSE}(R_y),
 \qquad
-\mathcal L_c=\operatorname{MSE}(R_c).
+\mathcal L_c=\mathrm{MSE}(R_c).
 $$
 
 No slip is imposed weakly on both channel walls through
 
 $$
-\mathcal L_{\mathrm{wall},U}=\operatorname{MSE}(U),
+\mathcal L_{\mathrm{wall},U}=\mathrm{MSE}(U),
 \qquad
-\mathcal L_{\mathrm{wall},V}=\operatorname{MSE}(V).
+\mathcal L_{\mathrm{wall},V}=\mathrm{MSE}(V).
 $$
 
 Periodicity is imposed through corresponding left and right points:
 
 $$
-\mathcal L_{\mathrm{per},U}
-=
-\operatorname{MSE}
+\mathcal L_{\mathrm{per},U}=
+\mathrm{MSE}
 \left[
 U(-\ell/2,Y)-U(+\ell/2,Y)
 \right],
 $$
 
 $$
-\mathcal L_{\mathrm{per},V}
-=
-\operatorname{MSE}
+\mathcal L_{\mathrm{per},V}=
+\mathrm{MSE}
 \left[
 V(-\ell/2,Y)-V(+\ell/2,Y)
 \right],
 $$
 
 $$
-\mathcal L_{\mathrm{per},\Pi}
-=
-\operatorname{MSE}
+\mathcal L_{\mathrm{per},\Pi}=
+\mathrm{MSE}
 \left[
 \Pi(-\ell/2,Y)-\Pi(+\ell/2,Y)
 \right].
@@ -399,7 +391,7 @@ The final losses below were read from the completed training results.
 | 1 | $7.51894\times10^{-4}$ | $1.58530\times10^{-4}$ |
 | 2 | $4.06461\times10^{-4}$ | $1.22300\times10^{-4}$ |
 
-On the Linux CPU used for the final reproduction, a complete training run took
+On the Linux CPU used to produce the included runs, a complete training run took
 roughly one hour per seed (exact wall-clock times are stored in the corresponding `results/pinn/seed_N/training.json` files). Wall-clock time is platform-, hardware-, threading-,
 and software-stack-dependent, so this is only an approximate guide.
 

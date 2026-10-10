@@ -28,11 +28,10 @@ $$
 
 In the physical FEM coordinate convention used throughout the analytical and FEM parts,
 
-$$
-H(x)
-=
-H_0-A\cos\left(\frac{2\pi x}{L}\right),
-$$
+```math
+H(x)=
+H_0-A\,\cos\left(\frac{2\pi x}{L}\right),
+```
 
 and the symmetric walls are
 
@@ -66,10 +65,10 @@ the corrugation parameter used in the original physical notation. The PINN formu
 
 ## Pressure-driven Stokes equations
 
-Let $p$ denote the physical pressure and introduce a periodic pressure correction $\widetilde p$ through
+Let $p$ denote the physical pressure and introduce a periodic pressure correction $\tilde p$ through
 
 $$
-p(x,y)=\widetilde p(x,y)-Gx,
+p(x,y)=\tilde p(x,y)-Gx,
 \qquad
 G=-\frac{\Delta p}{L}>0,
 $$
@@ -81,19 +80,18 @@ $$
 $$
 
 For velocity
-
 $$
-\mathbf u=(u,v),
+𝐮=(u,v),
 $$
 
 the steady incompressible Stokes equations in one periodic cell are
 
 $$
--\mu\nabla^2u+\frac{\partial\widetilde p}{\partial x}=G,
+-\mu\nabla^2u+\frac{\partial\tilde p}{\partial x}=G,
 $$
 
 $$
--\mu\nabla^2v+\frac{\partial\widetilde p}{\partial y}=0,
+-\mu\nabla^2v+\frac{\partial\tilde p}{\partial y}=0,
 $$
 
 $$
@@ -104,13 +102,11 @@ $$
 
 Equivalently,
 
-$$
--\mu\nabla^2\mathbf u+\nabla\widetilde p
-=
-G\,\mathbf e_x,
+```math
+-\mu\nabla^2 𝐮 +\nabla\tilde p=G \, 𝐞_x,
 \qquad
-\nabla\cdot\mathbf u=0.
-$$
+\nabla\cdot 𝐮 =0.
+```
 
 The formulation is at $Re=0$; no inertial term is present.
 
@@ -119,7 +115,7 @@ The formulation is at $Re=0$; no inertial term is present.
 The channel walls satisfy no slip,
 
 $$
-\mathbf u(x,\omega_\pm(x))=\mathbf 0.
+𝐮(x,\omega_\pm(x))=𝟎.
 $$
 
 The velocity and periodic pressure correction are periodic across the cell,
@@ -133,12 +129,12 @@ v(0,y)=v(L,y),
 $$
 
 $$
-\widetilde p(0,y)=\widetilde p(L,y),
+\tilde p(0,y)=\tilde p(L,y),
 $$
 
 for corresponding points on the two periodic boundaries.
 
-Only pressure differences are physical, so $\widetilde p$ is determined up to an additive constant. The FEM formulation fixes this nullspace with one pressure gauge; field comparisons use a zero-mean pressure representative.
+Only pressure differences are physical, so $\tilde p$ is determined up to an additive constant. The FEM formulation fixes this nullspace with one pressure gauge; field comparisons use a zero-mean pressure representative.
 
 ## Target case
 

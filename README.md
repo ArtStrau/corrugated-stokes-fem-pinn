@@ -8,12 +8,12 @@
        alt="Pressure-driven flow through a periodically corrugated channel"
        width="90%">
   <br>
-  <em>Pressure-driven Stokes flow in the periodically corrugated channel. <br> The single-period FEM solution is repeated over three periods for visualization.</em>
+  <em>Pressure-driven Stokes flow in the periodically corrugated channel. <br> The single-period solution is repeated over three periods for visualization.</em>
 </p>
 
 ## Problem
 
-This project studies pressure-driven incompressible flow through a periodically corrugated channel in the Stokes limit, corresponding to Reynolds number $Re=0$. The aim is to treat the same physical problem at three complementary levels: an analytical approximation, a full two-dimensional finite-element (FEM) solution, and a physics-informed neural network (PINN).
+This project studies pressure-driven incompressible flow through a periodically corrugated channel in the Stokes limit, corresponding to Reynolds number $Re=0$. The aim is to treat the same physical problem at three complementary levels: an analytical approximation, a full two-dimensional solution obtained with the finite-element method (FEM), and a physics-informed neural network (PINN).
 
 <p align="center">
   <img src="docs/images/overview_three_approaches.png"
@@ -23,7 +23,7 @@ This project studies pressure-driven incompressible flow through a periodically 
   <em>Same physical problem, three complementary solution approaches.</em>
 </p>
 
-PINNs have already been applied to a broad range of computational fluid dynamics (CFD) problems, including flows in non-trivial geometries. Here the purpose is to isolate periodic corrugation as the main numerical complication. Curved no-slip walls, strong variation of the channel width, and periodicity require accurate geometry handling and make scaling, near-wall collocation, and boundary enforcement especially important for the PINN. The Stokes limit removes inertial nonlinearity, so these geometry-related issues can be examined in a minimal, controlled setting. FEM provides an independent full-field numerical reference, while the analytical model supplies a reduced reference. This three-level framework can naturally be extended to finite-$Re$ Navier–Stokes flows.
+PINNs have already been applied to a broad range of computational fluid dynamics (CFD) problems, including flows in non-trivial geometries. Here the purpose is to isolate periodic corrugation as the main numerical complication. Curved no-slip walls, strong variation of the channel width, and periodicity require accurate geometry handling and make scaling, near-wall collocation, and boundary enforcement especially important for the PINN. The Stokes limit removes inertial nonlinearity, so these geometry-related issues can be examined in a minimal, controlled setting. FEM provides an independent full-field numerical reference, while the analytical model supplies a reduced reference. This three-level framework can naturally be extended to finite-$`Re`$ Navier–Stokes flows.
 
 For the channel geometry, I use the sinusoidally corrugated setup from my earlier study below, while focusing here on the pressure-driven flow itself:
 
@@ -47,7 +47,7 @@ The target case uses $L=1$, $\Delta\Omega=0.5$, $\Delta\omega=0.1$, $\delta=0.2$
 - **Analytical approximation.** A leading-order lubrication model provides an
   interpretable reduced description and recovers the exact Poiseuille solution
   in the straight-channel limit.
-- **Finite-element method (FEM).** A mapped $Q_2$–$Q_1$ Taylor–Hood formulation
+- **Finite-element method (FEM).** A mapped $`Q_2`$–$`\,Q_1`$ Taylor–Hood formulation
   resolves the full two-dimensional Stokes problem with periodic boundary
   conditions and a pressure gauge.
 - **Physics-informed neural network (PINN).** A float64
@@ -78,11 +78,13 @@ quantitative summary below includes all three independently initialized PINNs.
   <tr>
     <td align="center">
       <img src="results/figures/validation/speed_pinn_seed1.png"
-           alt="PINN seed-1 velocity magnitude with streamlines">
+           alt="PINN seed-1 velocity magnitude with streamlines"
+           width="90%">
     </td>
     <td align="center">
       <img src="results/figures/validation/velocity_error_seed1.png"
-           alt="Velocity difference between PINN seed 1 and FEM">
+           alt="Velocity difference between PINN seed 1 and FEM"
+           width="90%">
     </td>
   </tr>
 </table>
@@ -175,8 +177,8 @@ root-selection option read and write under the optional top-level
 `reproduction/` tree, leaving `results/` unchanged. Use
 `--canonical` to select `results/` explicitly, or `--results-root PATH` to use
 another top-level result root. These selectors are mutually exclusive, and a
-custom root cannot be `results/` or one of its descendants. Generated scientific
-figures always refer to `results/`.
+custom root cannot be `results/` or one of its descendants. This README and its
+included scientific figures refer to `results/`.
 
 Each script listed below exposes its available options with:
 

@@ -12,8 +12,7 @@ The analytical model is used as a transparent baseline, not as a replacement for
 For a straight symmetric channel of constant full width $H$, the exact Stokes velocity profile is
 
 $$
-u_{\mathrm{P}}(y)
-=
+u_{\mathrm{P}}(y)=
 \frac{G}{2\mu}
 \left(
 \frac{H^2}{4}-y^2
@@ -28,29 +27,25 @@ $$
 
 The corresponding two-dimensional volume flux per unit out-of-plane depth is
 
-$$
-Q_{\mathrm{P}}
-=
+```math
+Q_{\mathrm{P}}=
 \int_{-H/2}^{H/2} u_{\mathrm{P}}(y)\,dy
-=
-\frac{GH^3}{12\mu}.
-$$
+=\frac{GH^3}{12\mu}.
+```
 
 This straight-channel solution provides an exact limiting check for both the analytical implementation and the FEM solver.
 
 For the sweep point $\delta=1$, the channel is straight with $H=0.5$. The analytical flux is
 
 $$
-Q_{\mathrm{P}}
-=
+Q_{\mathrm{P}}=
 1.04166666666667\times10^{-2},
 $$
 
 while the corresponding $256\times128$ fine-sweep FEM result is
 
 $$
-Q_{\mathrm{FEM}}
-=
+Q_{\mathrm{FEM}}=
 1.04166666666729\times10^{-2}.
 $$
 
@@ -60,16 +55,14 @@ The relative FEM deviation from the exact Poiseuille flux is approximately $6.02
 
 For the corrugated channel, write the full width as
 
-$$
-H(x)
-=
-H_0-A\cos\left(\frac{2\pi x}{L}\right)
-=
-H_0
+```math
+H(x)=
+H_0-A\,\cos\left(\frac{2\pi x}{L}\right)
+=H_0
 \left[
-1-a\cos\left(\frac{2\pi x}{L}\right)
+1-a\,\cos\left(\frac{2\pi x}{L}\right)
 \right],
-$$
+```
 
 where
 
@@ -79,18 +72,16 @@ $$
 
 Define the period average of a function $f(x)$ by
 
-$$
-\langle f\rangle_x
-=
+```math
+\langle f\rangle_x=
 \frac{1}{L}
 \int_0^L f(x)\,dx.
-$$
+```
 
 The inverse-cube geometry factor used by the lubrication approximation is
 
 $$
-F
-=
+F=
 H_0^3
 \left\langle
 H(x)^{-3}
@@ -100,8 +91,7 @@ $$
 For the sinusoidal width above, this average has the closed form
 
 $$
-F
-=
+F=
 \frac{2+a^2}
 {2(1-a^2)^{5/2}}.
 $$
@@ -109,8 +99,7 @@ $$
 The leading-order lubrication flux is then
 
 $$
-Q_{\mathrm{lub}}
-=
+Q_{\mathrm{lub}}=
 \frac{G H_0^3}
 {12\mu F}.
 $$
@@ -118,8 +107,7 @@ $$
 The associated local axial velocity profile is parabolic across each section,
 
 $$
-u_{\mathrm{lub}}(x,y)
-=
+u_{\mathrm{lub}}(x,y)=
 \frac{
 6Q_{\mathrm{lub}}
 \left[y-\omega_-(x)\right]
@@ -130,32 +118,29 @@ $$
 
 By construction,
 
-$$
+```math
 \int_{\omega_-(x)}^{\omega_+(x)}
-u_{\mathrm{lub}}(x,y)\,dy
-=
+u_{\mathrm{lub}}(x,y)\,dy=
 Q_{\mathrm{lub}},
-$$
+```
 
 so the leading-order approximation carries the same flux through every cross-section.
 
 Only this leading-order lubrication model is used in the present project. Higher-order lubrication corrections are outside the scope of the public computational comparison.
 
-## Analytical/FEM validity study
+## Validity of the analytical approximation
 
 To quantify the accuracy of the leading-order approximation away from the straight-channel limit, the project compares $Q_{\mathrm{lub}}$ with independently computed FEM fluxes over
 
 $$
-\delta
-=
+\delta=
 1.0,\ 0.9,\ 0.8,\ 0.7,\ 0.6,\ 0.5,\ 0.4,\ 0.3,\ 0.2,\ 0.1.
 $$
 
 The swept parameter is
 
 $$
-\delta
-=
+\delta=
 \frac{\Delta\omega}{\Delta\Omega},
 $$
 
@@ -175,19 +160,17 @@ $$
 
 Thus
 
-$$
-\Delta\omega
-=
+```math
+\Delta\omega=
 \delta\,\Delta\Omega.
-$$
+```
 
 The selected FEM reference for the target case $\delta=0.2$ and the ten FEM values in the analytical sweep use a $256\times128$ mapped Taylor–Hood mesh, integration order $6$, and flux quadrature order $64$.
 
 The relative analytical/FEM flux error is defined as
 
 $$
-e_Q^{\mathrm{lub}}
-=
+e_Q^{\mathrm{lub}}=
 \frac{
 \left|Q_{\mathrm{lub}}-Q_{\mathrm{FEM}}\right|
 }
@@ -231,8 +214,7 @@ All ten coarse points were recomputed and compared point by point with the
 corresponding $256\times128$ fine-sweep FEM values using
 
 $$
-d_Q^{\mathrm{mesh}}
-=
+d_Q^{\mathrm{mesh}}=
 \frac{
 \left|Q_{\mathrm{FEM}}^{256\times128}-Q_{\mathrm{FEM}}^{128\times64}\right|
 }{

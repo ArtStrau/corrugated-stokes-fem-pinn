@@ -16,13 +16,12 @@ $$
 
 The reference-grid vertices are mapped to the physical channel by
 
-$$
-y(x,\eta)
-=
+```math
+y(x,\eta)=
 \frac{1-\eta}{2}\,\omega_-(x)
 +
 \frac{1+\eta}{2}\,\omega_+(x).
-$$
+```
 
 The resulting physical mesh is a structured quadrilateral mesh. Wall vertices
 lie on the exact sinusoidal walls, while the FEM mesh represents each wall by
@@ -43,10 +42,10 @@ clearly visible. The selected FEM reference uses the finer $256\times128$ mesh.
 ## Taylor–Hood discretization
 
 Velocity uses vector-valued biquadratic $Q_2$ elements and the periodic
-pressure correction $\widetilde p$ uses bilinear $Q_1$ elements:
+pressure correction $\tilde p$ uses bilinear $Q_1$ elements:
 
 $$
-\mathbf V_h=[Q_2]^2,
+𝐕_h=[Q_2]^2,
 \qquad
 Q_h=Q_1.
 $$
@@ -59,24 +58,21 @@ reference and convergence study use integration order $6$.
 Using the pressure decomposition already defined in the physical problem,
 
 $$
-p(x,y)=\widetilde p(x,y)-Gx,
+p(x,y)=\tilde p(x,y)-Gx,
 $$
 
-the discrete weak problem seeks $(\mathbf u_h,\widetilde p_h)\in\mathbf
-V_h\times Q_h$ such that, for periodic test functions satisfying the wall
+the discrete weak problem seeks $(𝐮_h,\tilde p_h)\in 𝐕_h \times Q_h$ such that, for periodic test functions satisfying the wall
 constraints,
 
-$$
-\mu\int_\Omega\nabla\mathbf u_h:\nabla\mathbf v_h\,d\Omega
--
-\int_\Omega\widetilde p_h\,\nabla\cdot\mathbf v_h\,d\Omega
-=
-\int_\Omega G\,\mathbf e_x\cdot\mathbf v_h\,d\Omega,
-$$
+```math
+\mu\int_\Omega\nabla 𝐮_h:\nabla 𝐯_h\,d\Omega
+-\int_\Omega\tilde p_h \nabla\cdot 𝐯_h \, d\Omega
+=\int_\Omega G \, 𝐞_x\cdot 𝐯_h \, d\Omega,
+```
 
-$$
-\int_\Omega q_h\,\nabla\cdot\mathbf u_h\,d\Omega=0.
-$$
+```math
+\int_\Omega q_h\,\nabla\cdot 𝐮_h\,d\Omega=0.
+```
 
 Assembly gives the mixed block system
 
@@ -88,8 +84,7 @@ B&0
 \begin{pmatrix}
 U\\
 P
-\end{pmatrix}
-=
+\end{pmatrix}=
 \begin{pmatrix}
 F\\
 0
@@ -97,25 +92,25 @@ F\\
 $$
 
 In the implementation, $A$ is the viscous vector-Laplacian block and
-$B=-\operatorname{div}$ is the negative discrete divergence block.
+$B=-\mathrm{div}$ is the negative discrete divergence block.
 
 ## Periodicity, walls, and pressure gauge
 
 Periodic degrees of freedom are paired at the left and right boundaries by
 their physical $y$ coordinates. The $u$ pairs, $v$ pairs, and
-$\widetilde p$ pairs are constructed independently. One sparse prolongation
+$\tilde p$ pairs are constructed independently. One sparse prolongation
 matrix $P$ maps reduced periodic unknowns $z_r$ to the full mixed vector,
 $z=Pz_r$, giving the reduced system
 
-$$
-P^T K P\,z_r=P^T f.
-$$
+```math
+P^T K P \, z_r=P^T f.
+```
 
 All top and bottom $Q_2$ velocity degrees of freedom are constrained to zero.
 One pressure degree of freedom on the retained periodic side is fixed to remove
 the additive pressure nullspace. Physical field comparisons remove the
 arbitrary pressure constant separately by using a zero-mean
-$\widetilde p$ representative.
+$\tilde p$ representative.
 
 Both left-retained and right-retained periodic reductions were solved and
 compared independently on the finest mesh.
@@ -200,10 +195,10 @@ The final FEM fields are summarized below.
 
 | | |
 |:---:|:---:|
-| ![Longitudinal velocity component $u(x,y)$](../results/figures/fem/u.png) | ![Transverse velocity component $v(x,y)$](../results/figures/fem/v.png) |
-| *Longitudinal velocity component $u(x,y)$* | *Transverse velocity component $v(x,y)$* |
-| ![Speed magnitude and streamlines](../results/figures/fem/speed_streamlines.png) | ![Zero-mean periodic pressure correction](../results/figures/fem/pressure_tilde.png) |
-| *Speed magnitude $\|\mathbf{u}\|=\sqrt{u^2+v^2}$ with streamlines* | *Zero-mean periodic pressure correction $\widetilde p(x,y)$* |
+| ![Longitudinal velocity component](../results/figures/fem/u.png) | ![Transverse velocity component](../results/figures/fem/v.png) |
+| *Longitudinal velocity component* | *Transverse velocity component* |
+| ![Speed magnitude with streamlines](../results/figures/fem/speed_streamlines.png) | ![Zero-mean periodic pressure correction](../results/figures/fem/pressure_tilde.png) |
+| *Speed magnitude with streamlines* | *Zero-mean periodic pressure correction* |
 
 The figures are generated from the selected $256\times128$ FEM reference stored
 in `results/fem/reference.npz`.

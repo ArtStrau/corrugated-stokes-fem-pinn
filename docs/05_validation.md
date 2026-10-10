@@ -30,21 +30,20 @@ u_{\mathrm{PINN}}=U_0U,
 \qquad
 v_{\mathrm{PINN}}=U_0V,
 \qquad
-\widetilde p_{\mathrm{PINN}}=P_0\Pi.
+\tilde p_{\mathrm{PINN}}=P_0\Pi.
 $$
 
 The velocity and pressure discrepancies are based on physical $L^2$-type field
 norms over the channel area. For example, the squared velocity-field
 difference is measured through
 
-$$
+```math
 \int_\Omega
 \left[
-\left(u_{\mathrm{PINN}}-u_{\mathrm{FEM}}\right)^2
-+
+\left(u_{\mathrm{PINN}}-u_{\mathrm{FEM}}\right)^2 +
 \left(v_{\mathrm{PINN}}-v_{\mathrm{FEM}}\right)^2
-\right]dA,
-$$
+\right] d\Omega,
+```
 
 and is normalized by the corresponding FEM velocity-field norm. The numerical
 comparison grid and its weights are used only to evaluate these physical-area
@@ -78,11 +77,11 @@ The $96$ transverse values $\eta_j$ are nonuniformly spaced Gauss–Legendre
 nodes on $[-1,1]$. Gauss–Legendre quadrature is a standard numerical
 integration rule on this interval: each node has a prescribed weight $w_j$, and
 
-$$
+```math
 \int_{-1}^{1}g(\eta)\,d\eta
 \approx
-\sum_j w_j g(\eta_j).
-$$
+\sum_j w_j \, g(\eta_j).
+```
 
 Here it is used only to evaluate the transverse part of the physical-area
 integrals. It is not part of the physics, the PINN formulation, or the FEM
@@ -92,15 +91,15 @@ The uniform longitudinal direction contributes the interval length
 $\Delta x=L/n_x$, while mapping $\eta\in[-1,1]$ to the physical cross-section
 contributes the Jacobian
 
-$$
+```math
 dy=\frac{H_i}{2}\,d\eta.
-$$
+```
 
 Combining these factors with the Gauss–Legendre weight gives
 
-$$
-W_{ij}=w_j\frac{H_i}{2}\frac{L}{n_x}.
-$$
+```math
+W_{ij}=w_j\,\frac{H_i}{2}\frac{L}{n_x}.
+```
 
 $W_{ij}$ is the numerical physical-area weight associated with the sample
 point $(x_i,y_{ij})$. These weights are needed because the field discrepancy
@@ -113,14 +112,12 @@ constant. FEM and PINN pressures therefore cannot be compared directly until a
 common gauge is chosen. The chosen gauge is zero physical-area mean pressure,
 so each sampled pressure field is converted independently to
 
-$$
-\widetilde p^0
-=
-\widetilde p
--
-\frac{\sum_{ij}W_{ij}\widetilde p_{ij}}
+```math
+\tilde p^0=
+\tilde p
+-\frac{\sum_{ij}W_{ij}\,\tilde p_{ij}}
      {\sum_{ij}W_{ij}}.
-$$
+```
 
 The weighting is required because this is the mean over physical channel area,
 not the arithmetic mean over the nonuniform quadrature points.
@@ -162,16 +159,14 @@ diagnostics, not rigorous a-posteriori solution-error bounds.
 With
 
 $$
-\|f\|_W
-=
+\|f\|_W=
 \left(\sum_{ij}W_{ij}|f_{ij}|^2\right)^{1/2},
 $$
 
 the reported velocity discrepancy is
 
 $$
-e_u
-=
+e_u=
 \frac{\|\mathbf u_{\mathrm{PINN}}-\mathbf u_{\mathrm{FEM}}\|_W}
      {\|\mathbf u_{\mathrm{FEM}}\|_W},
 $$
@@ -179,17 +174,15 @@ $$
 the pressure discrepancy is
 
 $$
-e_p
-=
-\frac{\|\widetilde p^0_{\mathrm{PINN}}-\widetilde p^0_{\mathrm{FEM}}\|_W}
-     {\|\widetilde p^0_{\mathrm{FEM}}\|_W},
+e_p=
+\frac{\|\tilde p^0_{\mathrm{PINN}}-\tilde p^0_{\mathrm{FEM}}\|_W}
+     {\|\tilde p^0_{\mathrm{FEM}}\|_W},
 $$
 
 and the mean-flux discrepancy is
 
 $$
-e_Q
-=
+e_Q=
 \frac{|\overline Q_{\mathrm{PINN}}-\overline Q_{\mathrm{FEM}}|}
      {|\overline Q_{\mathrm{FEM}}|}.
 $$
@@ -296,7 +289,7 @@ before taking the pointwise error magnitude.
     <td width="33.33%" align="center"><b>Difference</b></td>
   </tr>
   <tr>
-    <td colspan="3" align="center"><b>Longitudinal velocity <i>u</i></b></td>
+    <td colspan="3" align="center"><b>Longitudinal velocity</b></td>
   </tr>
   <tr>
     <td align="center">
@@ -313,7 +306,7 @@ before taking the pointwise error magnitude.
     </td>
   </tr>
   <tr>
-    <td colspan="3" align="center"><b>Transverse velocity <i>v</i></b></td>
+    <td colspan="3" align="center"><b>Transverse velocity</b></td>
   </tr>
   <tr>
     <td align="center">
